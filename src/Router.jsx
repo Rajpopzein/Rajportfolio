@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About_page/About";
 import Dashboard from "./pages/Dashboard";
-import Contact from "./pages/Contact";
+import Contact from "./pages/Contact_page/Contact";
 
 const Routerdefinition = () => {
     return(

@@ -1,0 +1,105 @@
+.contact_heading{
+    width: 100%;
+    /* text-align: center; */
+}
+.contact_heading > h1{
+    background-image: linear-gradient(90deg,#322e2e 25%, #6a11cb 50%);
+    background-clip: text;
+    color: transparent;
+    font-size: 3rem;
+}
+.contact_heading > p{
+    color: #595858;
+}
+.contact-card{
+    border: 1px solid transparent;
+    box-shadow: 1px 0px 9px 0.01px #a17ec488;
+    margin-top: 1.7rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+.contact-card-details > h1{
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+.contact-card-details{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 60%;
+}
+.conatact-name > input{
+    margin-right: 1rem;
+    width: 41.3%;
+    padding:0.6rem;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0px 1px 4px 0.7px #807f8260;
+}
+.contact-form{
+    margin-top: 1rem;
+}
+.contact_showcase > img {
+    width: 400px;
+    margin-top: 0.7rem;
+}
+.Contact-conten-pages > input{
+    width: 88%;
+    margin: 0.7rem 0px;
+    padding:0.6rem;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0px 1px 4px 0.7px #807f8260;
+}
+.Contact-conten-pages > textarea{
+    width: 88%;
+    resize: none;
+    padding:0.6rem;
+    height: 6rem;
+    border: none;
+    border-radius: 0.2rem;
+    box-shadow: 0px 1px 4px 0.7px #807f8260;
+}
+.mars-btn{
+    width: 91.1%;
+    padding: 0.4rem;
+    color: #f8f8f8;
+    background-color: #6c47bd;
+    border: none;
+    border-radius: 0.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.mars-btn > p{
+    font-size: 1rem !important;
+    font-weight: 500;
+    font-family: "Indie Flower", cursive !important;
+    margin-right:1rem ;
+}
+
+.conatact-name > input:focus{
+    border: none !important;
+    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    outline: none;
+}
+.conatact-name > input:active{
+    border: none !important;
+    outline: none;
+}
+.Contact-conten-pages > textarea:focus{
+    border: none !important;
+    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    outline: none;
+}
+.Contact-conten-pages > input:focus{
+    border: none !important;
+    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    outline: none;
+}
+.marse-img{
+    border-radius: 0.5rem;
+    transform: scaleX(-1);
+}
