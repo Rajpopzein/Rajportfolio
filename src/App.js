@@ -1,23 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useContext, useEffect, useRef } from "react";
+import "./App.css";
+import Navbar from "./component/navbar/Navbar";
+import rocket from "./assets/rocket-spaceship.png";
+import airdrop from "./assets/air-delivery.png";
+import {easeOut, motion } from "framer-motion";
+import handshake from "./assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 
-function App() {
+function App({children}) {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <nav className="main">
+        <Navbar />
+      </nav>
+      <main>
+        {children}
+      </main>
+      <footer className="footer">
+            <div className="main footermain">
+              <h1 className="footer_head">Thanks for visiting!</h1>
+              <h6 className="footer_subp">
+                Got questions, comments, or feedback?
+                <br />
+                Feel free to reach out and contact me.
+              </h6>
+            </div>
+          </footer>
     </div>
   );
 }

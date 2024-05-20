@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 .App {
   text-align: center;
 }
@@ -8,31 +10,201 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .project_card {
+    /* scale: 0%; */
+    opacity: 0;
+    box-shadow: 1px 4px 5px 3px #9e9c9c37;
+    padding: 1rem;
+    min-width: 10rem !important;
+    max-width: 20rem !important;
+    margin: 1rem 1rem 1rem 0;
+    border-radius: 5px;
+    animation: fade-in ease-in forwards;
+    animation-timeline: view();
+    animation-range: contain contain;
+    /* transform-origin: left; */
+    animation-range: entry 1%;
+  }
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+.main {
+  margin: 1.5rem 5rem;
+}
+
+.Lander_page {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+.intro_tag {
+  font-size: 3.8rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 8%;
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.rocket_image {
+  width: 100%;
+  height: 100%;
+  margin-top: 1rem;
+  margin-left: -0.5rem;
+}
+.minar_insp {
+  color: #b8b8b8b3;
+  font-weight: 800;
+  font-size: 1.25rem;
+  font-family: "Indie Flower", cursive;
+}
+.btn_available {
+  border: 1.5px solid #7247cd;
+  padding: 1% 2%;
+  border-radius: 1rem;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.btn_available > span {
+  color: #6c47bd;
+}
+.subtab {
+  margin: 1.5rem 0;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.minar_insp {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.project {
+  margin-top: 2rem;
+  /* display: flex;
+  justify-content: space-between; */
+}
+.primary_color {
+  color: #6c47bd;
+}
+.project_head {
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.airdrop {
+  width: 70%;
+}
+.project_list {
+  display: grid;
+  grid-template-columns: auto auto auto ;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.strong {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.View_btn {
+  border: 1.5px solid #6c47bd;
+  padding: 0.3rem 0.9rem;
+  margin-top: 0.5rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  background-color: #6c47bd;
+  cursor: pointer;
+}
+
+.card_content {
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+  color: #b8b8b8;
+  font-weight: 200;
+}
+.card_platform {
+  margin-bottom: 1rem;
+  font-weight: 450;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+.footer {
+  background-color: #27262a;
+  overflow: hidden;
+}
+.footermain {
+  padding-top: 1.5rem;
+}
+.footer_head {
+  color: #fff;
+}
+.footer_subp {
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.handshake_img {
+  color: #6c47bd;
+  position: relative;
+  top: 5px;
+}
+
+.flex_column{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+@supports (scrollbar-color: auto) {
+  *::-webkit-scrollbar {
+    width: 7px;
+    opacity: 0 !important;
   }
-  to {
-    transform: rotate(360deg);
+  *::-webkit-scrollbar-thumb {
+    background-color: #dd720d6a;
+    height: 3rem !important;
+    border-radius: .25rem;
+  }
+}
+
+
+@media only screen and (max-width:430px) and (max-height:932px){
+  .project_list {
+    display: grid;
+    grid-template-columns: auto  ;
+  }
+  .rocket_image{
+    display: none;
+  }
+  .main {
+    margin: 1.5rem 2rem;
+  }
+  .intro_tag {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 8%;
+    margin-top: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+@media screen and (max-width:820px) {
+  .rocket_image{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1024px) {
+  .rocket_image{
+  margin-top: 7rem;
   }
 }
