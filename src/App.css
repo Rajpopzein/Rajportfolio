@@ -53,13 +53,21 @@
   margin-top: 3.5rem;
   margin-bottom: 1.5rem;
 }
-/* .rockdiv{
-  animation: scrollimge ease-in 0.4s forwards;
-  animation: scrollimge ease-in 0.4s forwards;
-  animation-timeline: scroll();
-  animation-range-start: 1%;
-  overflow: hidden;
-} */
+.cloudicon{
+  color: #6c47bd;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+.cloudicon:hover{
+  animation: globe 5s ease-in-out forwards;
+  transform: rotateZ(-360deg);
+  transition: 1s ease-in-out;
+}
+@keyframes globe {
+  100%{
+    transform: rotateZ(360deg);
+  }
+}
 .rocket_image {
   width: 100%;
   height: 100%;
@@ -67,15 +75,7 @@
   margin-left: 1.0rem;
   
 }
-/* @keyframes scrollimge {
-  0%{
-    transform: rotateZ(0deg);
-  }
-  100%{
-    transform: rotateZ(25deg);
-    
-  }
-} */
+
 .minar_insp {
   color: #b8b8b8b3;
   font-weight: 800;

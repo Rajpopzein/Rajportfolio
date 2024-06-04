@@ -2,6 +2,8 @@ import rocket from "../assets/rocket-spaceship.png";
 import {easeOut, motion } from "framer-motion";
 import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import App from "../App";
+import { faCloud, faEarthAsia, faJetFighter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Dashboard() {
     const projects = [
@@ -69,7 +71,7 @@ function Dashboard() {
                     <div className="project_card" key={index}>
                       <h6 className="strong">{pro.name}</h6>
                       <p className="card_content">{pro.description}</p>
-                      <h6 className="card_platform">{pro.Platform}</h6>
+                      <h6 className="card_platform"><FontAwesomeIcon icon={faEarthAsia} className="cloudicon"/>{pro.Platform}</h6>
                       <a className="View_btn">View</a>
                     </div>
                   ))}
