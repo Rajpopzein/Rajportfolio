@@ -14,6 +14,7 @@ function App({ props }) {
       description: "Get assist with docters within seconds ",
       Platform: "React js, Switft, Native Android, Python",
     }
+    
   ];
 
   return (
