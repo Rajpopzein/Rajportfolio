@@ -37,7 +37,7 @@ function Dashboard() {
                   <h5 className="subtab">
                     A Developer who likes to build interactive things with code.
                   </h5>
-                  <motion.a className="btn_available" href="/contact">
+                  <motion.a className="btn_available" href="/about">
                     {/* <span className="material-symbols-outlined handshake_img">rocket_launch</span> */}
                     <img src={handshake} className="handshake_img"/>
                     <span>Available For New Project</span>
