@@ -19,7 +19,7 @@ function Contact() {
                 <form>
                   <div className='conatact-name'>
                     <input placeholder='First name'/>
-                    <input placeholder='last name'/>
+                    <input placeholder='last name' className='last_name'/>
                   </div>
                   <div className='Contact-conten-pages'>
                     <input placeholder='Email'/>

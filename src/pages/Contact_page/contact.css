@@ -30,9 +30,13 @@
     margin-left: 2rem;
     width: 60%;
 }
+.conatact-name{
+    display: flex;
+    width: 93.3% !important;
+}
 .conatact-name > input{
     margin-right: 1rem;
-    width: 41.3%;
+    width: 100%;
     padding:0.6rem;
     border: none;
     border-radius: 0.2rem;
@@ -103,3 +107,43 @@
     border-radius: 0.5rem;
     transform: scaleX(-1);
 }
+.conatact-name{
+    display: flex;
+    width: 100%;
+}
+
+@media only screen and (max-width:430px) and (max-height:932px){
+    .marse-img{
+        display: none;
+    }
+    .mars-btn{
+        width: 100%;
+    }
+    .contact-card{
+        padding: 0.1rem;
+        margin: 0 !important;
+    }
+    .contact-card-details{
+        margin-left: 0px;
+        width: 100%;
+        padding: 0 1rem;
+    }
+    .conatact-name{
+        flex-direction: row;
+        padding-right: 1.7rem;
+        width: 100% !important;
+    }
+    .conatact-name > input{
+        width: 100%;
+    }
+    .Contact-conten-pages > input {
+        width: 94%;
+    }
+    .Contact-conten-pages > textarea {
+        width: 94%;
+    }
+    .last_name{
+        margin-right: 0px !important;
+    }
+  }
+  
