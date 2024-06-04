@@ -43,7 +43,7 @@ function Dashboard() {
                   <p className="minar_insp">let's broaden our connections</p>
                 </motion.div>
               </div>
-              <div>
+              <div className="rockdiv">
                 <motion.div
                   initial={{ x: "15%", opacity: 0 }}
                   animate={{
