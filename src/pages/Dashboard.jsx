@@ -6,8 +6,8 @@ import App from "../App";
 function Dashboard() {
     const projects = [
         {
-          name: "Hello alfred",
-          description: "Get assist with docters within seconds ",
+          name: "Coming Soon",
+          description: "Building things quicker...........!",
           Platform: "React js, Switft, Native Android, Python",
         }
       ];
