@@ -13,22 +13,7 @@ function App({ props }) {
       name: "Hello alfred",
       description: "Get assist with docters within seconds ",
       Platform: "React js, Switft, Native Android, Python",
-    },
-    {
-      name: "Hello alfred",
-      description: "Get assist with docters within seconds ",
-      Platform: "React js, Switft, Native Android, Python",
-    },
-    {
-      name: "Hello alfred",
-      description: "Get assist with docters within seconds ",
-      Platform: "React js, Switft, Native Android, Python",
-    },
-    {
-      name: "Hello alfred",
-      description: "Get assist with docters within seconds ",
-      Platform: "React js, Switft, Native Android, Python",
-    },
+    }
   ];
 
   return (
