@@ -30,9 +30,13 @@
 }
 
 .menu_list{
-    width: 14rem;
+    /* width: 14rem;
     display: flex;
     justify-content: space-between;
+    list-style: none; */
+    width: 14rem;
+    display: flex;
+    justify-content: space-evenly;
     list-style: none;
 }
 .menu_list > li{
