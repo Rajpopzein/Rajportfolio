@@ -13,9 +13,10 @@
 
 .breif_para{
     text-align: left !important;
+    margin-top: 1rem;
 }
 .breif_para > p{
-    line-height: 1.5rem;
+    line-height: 1.7rem;
 }
 .about_main{
     display: grid;
