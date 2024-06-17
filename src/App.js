@@ -5,16 +5,25 @@ import rocket from "./assets/rocket-spaceship.png";
 import airdrop from "./assets/air-delivery.png";
 import {easeOut, motion } from "framer-motion";
 import handshake from "./assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeadset } from "@fortawesome/free-solid-svg-icons";
+import ChatbotScreen from "./component/chatbot_screen/ChatbotScreen";
 
 function App({children}) {
-  
+  const [chat_trigger, setChat_trigger] = useState(false)
   return (
     <div>
       <nav className="main">
         <Navbar />
       </nav>
-      <main>
+      <main className="main_page">
         {children}
+        <ChatbotScreen trigger={chat_trigger}/>
+        {/* <div className="chatbot_btn" onClick={()=>{
+          setChat_trigger(!chat_trigger)
+        }}>
+            <FontAwesomeIcon className="headhone" icon={faHeadset}/>
+        </div> */}
       </main>
       <footer className="footer">
             <div className="main footermain">

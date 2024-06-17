@@ -28,7 +28,11 @@
     font-weight: 500;
     color: #858080f1;
 }
-.social_media > i{
+.social_media{
+    margin-bottom: 1.5rem;
+    height: 2rem;
+}
+.social_media > a{
     font-size: 1rem;
     margin-top: 1rem;
     border: 1px solid #2575fc;
@@ -40,7 +44,7 @@
     background-size: 5%, 50%;
     animation: animation_text 1s ease-out infinite ;
 }
-.social_media > i:hover{
+.social_media > a:hover{
     background-color: #fff;
     background-image:none;
     color: #2575fc !important;
@@ -49,7 +53,7 @@
 .social_media :nth-child(1){
     font-weight: 400;
     font-size: 1.2rem;
-    margin-top: 0.5rem;
+    margin-top: 1.3rem;
     margin-bottom: -0.5rem;
 }
 

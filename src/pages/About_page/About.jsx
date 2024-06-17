@@ -16,9 +16,10 @@ function About() {
           </div>
           <div className="social_media">
             <p>Get in touch</p>
-            <i class="fa-brands fa-linkedin-in"></i>
-            <i class="fa-brands fa-github-alt"></i>
-            <i class="fa-brands fa-x-twitter"></i>
+            <a href="https://www.linkedin.com/in/rajkumar-ra"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/Rajpopzein"><i class="fa-brands fa-github-alt"></i></a>
+            <a href="https://x.com/rajpopzein2?s=21"><i class="fa-brands fa-x-twitter"></i></a>
+            
           </div>
         </div>
         <div className="breif_para">

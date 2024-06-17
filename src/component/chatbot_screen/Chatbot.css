@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+.chatbot_main{
+    position: fixed;
+    right: 6%;
+    bottom: 15%;
+    background-color: rgb(255, 255, 255);
+    width: 24.5rem;
+    height: 29rem;
+    /* border: 0.1px solid #c7c7c76d; */
+    border-radius: 4% 4% 4% 4%;
+    box-shadow: 0px 0px 20px 0.5px #08070950;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    transform: scale(0);
+}
+.chatbot_header{
+    width: 100%;
+    background-color: #6c47bd;
+    padding: 1.1rem 1.5rem;
+    color: #fff;
+    position: relative;
+    margin-right: 0px !important;
+}
+.chatbot_header > p{
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 1.3rem;
+}
+.marsimage{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 25%;
+    top: 28%;
+    animation: rotate infinite 2s alternate ease-in-out;
+}
+.marsimage1{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    right: 35%;
+    top: 22%;
+    animation: rotate infinite 2s alternate ease-in-out;
+}
+.marsimage2{
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 29%;
+    top: 1%;
+    animation: rotate infinite 2s alternate ease-in-out;
+}
+.marsimage3{
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    right: 23%;
+    top: 1%;
+    animation: rotate infinite 2s alternate ease-in-out;
+}
+@keyframes rotate {
+    0%{
+        transform: translateY(0.6rem);
+    }
+    100%{
+        transform: translateY(0.8rem);
+    }
+}
+.subtext_chatbot{
+    font-family: Poppins, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.7rem !important;
+    color: #fdfdfdc4;
+    margin-top: 2px;
+}
+.chatbot_body{
+    height: 72%;
+    background-color: #d4c8ed34;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    overflow-y: scroll;
+}
+.chatbot_footer{
+    background-color: #ffffff6a;
+    padding: 0.8rem 1.3rem;
+    
+}
+.chatbot_footer > form{
+    display: flex;
+    justify-content: space-between;
+}
+.chat_input{
+    border: none;
+    padding: 5px;
+    border-radius: 4%;
+    width: 75%;
+}
+.chat_input:focus{
+    border: none;
+    outline: none;
+}
+.send_btn_icn{
+    font-size: 1.5rem;
+    background-color: #fff;
+    color: #6c47bd;
+    border: none;
+    margin-right: 0.4rem !important;
+}
+.chat_bot_active{
+    display: flex !important;
+    animation: scale 1s ease-in forwards;
+}
+.user_chat_text{
+    background-color: hsla(0, 0%, 73%, 0.765);
+    max-width: 73%;
+    padding: 0.7rem 0.8rem;
+    border-radius: 7px 7px 0px 7px;
+    color: #1b1818;
+    margin-bottom: 1rem;
+    float: right;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+.bot_chat_text_div{
+    width: 100%;
+}
+.loader{
+    /* font-size: 2rem; */
+    background-color: #6c47bd;
+    max-width: 10%;
+    padding: 0.7rem -4rem;
+    border-radius: 7px 7px 7px 0%;
+    
+}
+
+.bot_chat_text{
+    width: auto;
+    background-color: #6c47bd;
+    padding: 0.7rem 0.8rem;
+    border-radius: 7px 7px 7px 0%;
+    color: #fff;
+    max-width: 67%;
+    margin-bottom: 1rem;
+    word-wrap: break-word; /* Ensure text wraps */
+    white-space: pre-wrap;
+}
+
+@keyframes scale {
+    from {
+        transform-origin: bottom right;
+        transform: scale(0);
+      }
+      to {
+        transform-origin: bottom right;
+        /* transform-origin: right; */
+        transform:  scale(1); 
+      }
+}
+.profile_icons{
+    height: 2.8rem;
+    width: 3rem;
+    background-color: #6c47bd;
+    border-radius: 50%;
+    margin-right: 0.4rem;
+    margin-top: 2.4rem;
+}
+.loader_icon{
+    font-size: 2rem;
+    margin-left: 0.25rem;
+    margin-top: -0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block; 
+    width: 0;
+    color: #fff;
+    animation: loading 2s ease-out infinite;
+}
+
+@keyframes loading {
+    to{
+        width: 100%;
+    }
+}
+.btn_chabot_intraction{
+    background-color: #beb9b94a;
+    padding: 0.25rem 0.3rem;
+    border-radius: 5px;
+}
+.btn_div_int{
+    display: flex; 
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+.btn_chabot_intraction:nth-child(even){
+    margin-left: 0.5rem !important;
+}
