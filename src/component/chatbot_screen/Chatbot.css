@@ -4,8 +4,8 @@
     right: 6%;
     bottom: 15%;
     background-color: rgb(255, 255, 255);
-    width: 24.5rem;
-    height: 29rem;
+    width: 23.5rem;
+    height: 29.5rem;
     /* border: 0.1px solid #c7c7c76d; */
     border-radius: 4% 4% 4% 4%;
     box-shadow: 0px 0px 20px 0.5px #08070950;
@@ -112,7 +112,7 @@
 }
 .chat_bot_active{
     display: flex !important;
-    animation: scale 1s ease-in forwards;
+    animation: scale 0.4s linear forwards;
 }
 .user_chat_text{
     background-color: hsla(0, 0%, 73%, 0.765);
@@ -143,11 +143,12 @@
     padding: 0.7rem 0.8rem;
     border-radius: 7px 7px 7px 0%;
     color: #fff;
-    max-width: 67%;
+    max-width: 80%;
     margin-bottom: 1rem;
     word-wrap: break-word; /* Ensure text wraps */
     white-space: pre-wrap;
 }
+
 
 @keyframes scale {
     from {
@@ -170,7 +171,7 @@
 }
 .loader_icon{
     font-size: 2rem;
-    margin-left: 0.25rem;
+    margin-left: 0.2rem;
     margin-top: -0.8rem;
     white-space: nowrap;
     overflow: hidden;
@@ -198,3 +199,4 @@
 .btn_chabot_intraction:nth-child(even){
     margin-left: 0.5rem !important;
 }
+

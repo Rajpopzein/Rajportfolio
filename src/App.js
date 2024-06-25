@@ -19,11 +19,11 @@ function App({children}) {
       <main className="main_page">
         {children}
         <ChatbotScreen trigger={chat_trigger}/>
-        {/* <div className="chatbot_btn" onClick={()=>{
+        <div className="chatbot_btn" onClick={()=>{
           setChat_trigger(!chat_trigger)
         }}>
             <FontAwesomeIcon className="headhone" icon={faHeadset}/>
-        </div> */}
+        </div>
       </main>
       <footer className="footer">
             <div className="main footermain">

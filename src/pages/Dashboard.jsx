@@ -8,9 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function Dashboard() {
     const projects = [
         {
-          name: "Coming Soon",
-          description: "Building things quicker...........!",
-          Platform: "React js, Switft, Native Android, Python",
+          name: "Zara",
+          description: "Chat bot that guides my profile",
+          Platform: "React js, Rasa, Python",
+          link: "https://github.com/Rajpopzein/Zara-chatbot.git"
         }
       ];
     
@@ -72,7 +73,7 @@ function Dashboard() {
                       <h6 className="strong">{pro.name}</h6>
                       <p className="card_content">{pro.description}</p>
                       <h6 className="card_platform"><FontAwesomeIcon icon={faEarthAsia} className="cloudicon"/>{pro.Platform}</h6>
-                      <a className="View_btn">View</a>
+                      <a className="View_btn" href={pro?.link}>View</a>
                     </div>
                   ))}
                 </div>

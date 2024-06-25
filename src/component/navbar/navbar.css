@@ -1,77 +1,147 @@
-.navbar_main{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: hidden;
+.navbar_main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
 }
-.brandname{
-    font-size: 145%;
-    font-weight: 700;
-    color: #212121;
-    cursor: pointer;
-    position: relative;
+.brandname {
+  font-size: 145%;
+  font-weight: 700;
+  color: #212121;
+  cursor: pointer;
+  position: relative;
 }
 .brandname::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px; /* Adjust the height as needed */
-    background-color: #7247cd;
-    transition: width .5s ease-out ; /* Transition width over 2 seconds */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px; /* Adjust the height as needed */
+  background-color: #7247cd;
+  transition: width 0.5s ease-out; /* Transition width over 2 seconds */
 }
-.brandname > a{
-    text-decoration: none;
-    color: #212121;
+.brandname > a {
+  text-decoration: none;
+  color: #212121;
 }
 .brandname:hover::before {
-    width: 100%; /* Expand width to 100% on hover */
+  width: 100%; /* Expand width to 100% on hover */
 }
 
-.menu_list{
-    /* width: 14rem;
+.menu_list {
+  /* width: 14rem;
     display: flex;
     justify-content: space-between;
     list-style: none; */
-    width: 14rem;
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
+  width: 14rem;
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
 }
-.menu_list > li{
-    font-weight: 600;
-    color: #212121;
-    padding: 0.2rem;
-    position: relative;
+.menu_list > li {
+  font-weight: 600;
+  color: #212121;
+  padding: 0.2rem;
+  position: relative;
 }
-.menu_list > li >a{
-    text-decoration: none;
-    color: #212121;
+.menu_list > li > a {
+  text-decoration: none;
+  color: #212121;
 }
 
-.menu_list > li::before{
-    position: absolute;
-    content: '';
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    width: 0;
+.menu_list > li::before {
+  position: absolute;
+  content: "";
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  background-color: #7247cd;
+  transition: width 0.5s ease-out;
+}
+
+.menu_list > li:hover::before {
+  width: 100%;
+}
+
+.menu_list > li:hover {
+  color: #7247cd;
+  cursor: pointer;
+}
+.band_sub {
+  color: #7247cd;
+}
+.intor_hisapn {
+  color: #7247cd;
+}
+.hidden_item {
+  display: none;
+}
+.xIcon {
+  transform: rotateZ(0deg);
+  animation: xRotate 1s linear;
+}
+.burgerIcon {
+  transform: scaleZ(0);
+  animation: aBurgerIcon 0.2s linear 0.2s forwards;
+}
+@keyframes aBurgerIcon {
+  25% {
+    transform: rotateZ(10deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  75% {
+    transform: rotateZ(-10deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+    transform: scaleZ(1);
+  }
+}
+
+@keyframes xRotate {
+  100% {
+    transform: rotateZ(90deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu_list {
+    display: none;
+  }
+  .hidden_item {
+    display: block;
+  }
+}
+
+.activeMenuList {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 12%;
+  left: 0;
+  width: 100% !important;
+  background-color: #000;
+  z-index: 1;
+  color: #fff !important;
+}
+.activeMenuList > li{
+    padding: 1rem;
+    margin: 0 1rem;
+}
+
+.activeMenuList > li >a{
+    color: #fff !important;
+}
+
+.activeMenuList > li:nth-child(odd){
+    border-bottom: 1px solid #e2e2e2;
+
+}
+
+/* .activeMenuList > li:hover{
     background-color: #7247cd;
-    transition: width .5s ease-out ;
-}
-
-.menu_list > li:hover::before{
-    width: 100%;
-}
-
-.menu_list > li:hover{
-    color: #7247cd;
-    cursor: pointer;
-}
-.band_sub{
-    color: #7247cd;
-}
-.intor_hisapn{
-    color: #7247cd;
-}
+} */

@@ -22,7 +22,9 @@ const ChatbotScreen = ({ trigger }) => {
             message: message
             }).then((e)=>{ 
                 setTimeout(() => {
-                setchatdata((prev)=>[...prev, e.data[0]]);
+                e?.data?.map((datas)=>(
+                    setchatdata((prev)=>[...prev, datas])
+                ))
                 setLoading(false)
                 },1200)
             }).catch((e)=>{console.error(e)})
@@ -55,14 +57,14 @@ const ChatbotScreen = ({ trigger }) => {
         e.preventDefault();
          if(message.message.length !== 0){
             setchatdata((prev)=>[...prev,message]); 
-            chat_bot_call(message.message.toLowerCase()); 
+            chat_bot_call(message.message); 
          }
          setmessage({...message, message:""})
     }
 
     const handle_internal_button = async(e)=>{
         const new_msg =  click_message
-        new_msg.message = e?.title.toLowerCase()
+        new_msg.message = e?.title
         setClick_message(new_msg);
         if(click_message.message.length !== 0){
             setchatdata((prev)=>[...prev,click_message]); 
@@ -83,8 +85,10 @@ const ChatbotScreen = ({ trigger }) => {
             <div className='chatbot_body' ref={chatWindowRef}>
                 {chatdata.map((item, index)=>(
                     <div className='bot_chat_text_div' key={index}>
-                        <div className={item?.recipient_id === "user"?'user_chat_text' :'bot_chat_text'}><p>{item?.recipient_id === "user"? item?.message:item?.text}</p>
-
+                        <div className={item?.recipient_id === "user"?'user_chat_text' :'bot_chat_text'}>
+                            <p>{item?.recipient_id === "user"? item?.message:item?.text}
+                                {item?.image && <img src={item?.image}/> }
+                            </p>
                             {item?.buttons && <div className='btn_div_int'>
                                 {item?.buttons?.map((item, index)=>(
                                 <div className='btn_chabot_intraction' key={index} onClick={()=>handle_internal_button(item)}>
@@ -95,7 +99,9 @@ const ChatbotScreen = ({ trigger }) => {
                         
                     </div>
                 ))}
-                {loading && <div className="loader"><p className='loader_icon'>...</p></div>}
+                {loading && <div className="loader">
+                    <p className='loader_icon'>...</p>
+                    </div>}
             </div>
             <div className='chatbot_footer'>
                 <form>
