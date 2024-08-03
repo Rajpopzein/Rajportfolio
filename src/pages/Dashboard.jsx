@@ -1,5 +1,5 @@
 import rocket from "../assets/rocket-spaceship.png";
-import {easeOut, motion } from "framer-motion";
+import {easeIn, easeOut, motion } from "framer-motion";
 import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import App from "../App";
 import { faCloud, faEarthAsia, faJetFighter } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +19,7 @@ function Dashboard() {
         <App>
           <main>
             <div className="Lander_page main">
-              <div>
+              <div className="heading_main">
                 <motion.div
                   initial={{ x: "-10%", opacity: 0 }}
                   animate={{
@@ -40,7 +40,7 @@ function Dashboard() {
                   </h5>
                   <motion.a className="btn_available" href="/about">
                     {/* <span className="material-symbols-outlined handshake_img">rocket_launch</span> */}
-                    <img src={handshake} className="handshake_img"/>
+                    <img src={handshake} className="handshake_img" alt="handshake"/>
                     <span>Available For New Project</span>
                   </motion.a>
                   <p className="minar_insp">let's broaden our connections</p>
@@ -48,17 +48,17 @@ function Dashboard() {
               </div>
               <div className="rockdiv">
                 <motion.div
-                  initial={{ x: "15%", opacity: 0 }}
+                  initial={{ x: "11%", visibility: "hidden" }}
                   animate={{
                     x: "10%",
-                    opacity: 1,
+                    visibility: "visible",
                     transition: {
-                      ease: easeOut,
-                      delay: 0.1,
+                      ease: easeIn,
+                      delay: 0.3,
                     },
                   }}
                 >
-                  <img className="rocket_image" src={rocket} />
+                  <img className="rocket_image" src={rocket} alt="rocket" />
                 </motion.div>
               </div>
             </div>
