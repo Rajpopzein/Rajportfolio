@@ -1,5 +1,5 @@
-// import rocket from "../../public/images/rocket-spaceship.png";
-import { easeOut, motion } from "framer-motion";
+import rocket from "../assets/rocket-spaceship.png";
+import {easeIn, easeOut, motion } from "framer-motion";
 import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import App from "../App";
 import {

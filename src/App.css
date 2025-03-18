@@ -140,7 +140,7 @@
   margin-bottom: 1.5rem;
 }
 .project {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   /* display: flex;
   justify-content: space-between; */
 }
@@ -216,6 +216,13 @@
   justify-content: space-between;
 }
 
+.heading_main{
+  width: 90%;
+  margin-top: 5%;
+}
+.rockdiv{
+  overflow: hidden;
+}
 
 @supports (scrollbar-color: auto) {
   *::-webkit-scrollbar {
