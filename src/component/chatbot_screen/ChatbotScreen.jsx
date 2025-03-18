@@ -18,7 +18,7 @@ const ChatbotScreen = ({ trigger }) => {
     const [loading, setLoading] = useState(false);
     const chat_bot_call = (message) =>{
         setLoading(true)
-        axios.post("http://127.0.0.1:5005/webhooks/rest/webhook", {
+        axios.post("https://zara-chatbot.onrender.com/webhooks/rest/webhook", {
             message: message
             }).then((e)=>{ 
                 setTimeout(() => {

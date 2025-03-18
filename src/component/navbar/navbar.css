@@ -61,6 +61,12 @@
   transition: width 0.5s ease-out;
 }
 
+.active{
+  border-bottom: 2px solid #7247cd;
+  transition: none;
+}
+
+
 .menu_list > li:hover::before {
   width: 100%;
 }
@@ -111,6 +117,9 @@
 @media screen and (max-width: 768px) {
   .menu_list {
     display: none;
+    opacity: 0;
+    transform: translateY(0);
+    animation: dactivateOpacLoad 0.5s 1s ease-in forwards !important;
   }
   .hidden_item {
     display: block;
@@ -127,19 +136,45 @@
   background-color: #000;
   z-index: 1;
   color: #fff !important;
-}
-.activeMenuList > li{
-    padding: 1rem;
-    margin: 0 1rem;
+  opacity: 0;
+  animation: opacLoad 0.5s 0.2s ease-out forwards !important;
 }
 
-.activeMenuList > li >a{
-    color: #fff !important;
+.deActiveAnmination {
+  opacity: 1;
+  /* transform: translateY(0);
+  animation: dactivateOpacLoad 0.5s 1s ease-in forwards !important; */
 }
 
-.activeMenuList > li:nth-child(odd){
-    border-bottom: 1px solid #e2e2e2;
+@keyframes dactivateOpacLoad {
+  100% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+}
 
+@keyframes opacLoad {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activeMenuList > li {
+  padding: 1rem;
+  margin: 0 1rem;
+}
+
+.activeMenuList > li > a {
+  color: #fff !important;
+}
+
+.activeMenuList > li:nth-child(odd) {
+  border-bottom: 1px solid #e2e2e2;
 }
 
 /* .activeMenuList > li:hover{
