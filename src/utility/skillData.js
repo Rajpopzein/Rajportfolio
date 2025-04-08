@@ -1,4 +1,4 @@
-import { faReact, faNode, faPython, faAws, faDocker } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faNode, faPython, faAws, faDocker, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const skillsData = [
     {
@@ -20,6 +20,10 @@ const skillsData = [
     {
         name:"Docker",
         icon: faDocker
+    },
+    {
+        name:"Github",
+        icon: faGithub
     }
 ]
 

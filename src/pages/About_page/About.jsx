@@ -16,9 +16,9 @@ function About() {
           </div>
           <div className="social_media">
             <p>Get in touch</p>
-            <a href="https://www.linkedin.com/in/rajkumar-ra"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/Rajpopzein"><i class="fa-brands fa-github-alt"></i></a>
-            <a href="https://x.com/rajpopzein2?s=21"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/rajkumar-ra"><i className="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/Rajpopzein"><i className="fa-brands fa-github-alt"></i></a>
+            <a href="https://x.com/rajpopzein2?s=21"><i className="fa-brands fa-x-twitter"></i></a>
             
           </div>
         </div>

@@ -71,7 +71,6 @@
   margin-right: 4.5px;
   margin-left: -5px;
   font-family: Poppins, sans-serif;
-  
 }
 .headhone{
   /* margin-top: 1.5px; */
@@ -107,11 +106,10 @@
   }
 }
 .rocket_image {
-  width: 100%;
-  height: 100%;
+  width: 90% !important;
+  height: auto !important;
   margin-top: 1rem;
-  margin-left: 0.5rem;
-  
+  /* margin-left: 0.5rem; */
 }
 
 .minar_insp {

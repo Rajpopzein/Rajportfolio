@@ -22,7 +22,7 @@
     display: grid;
     grid-template-columns: 1fr 1.6fr ;
     grid-row: 1;
-    margin: 7%;
+    margin: 5% 7%;
 }
 .para_content{
     margin-bottom: 1.5rem;

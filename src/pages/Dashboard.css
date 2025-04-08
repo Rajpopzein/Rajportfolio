@@ -1,11 +1,11 @@
 .skills_list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     grid-gap: 1rem;
     margin-top: 1.5rem;
     align-items: center;
     margin-bottom: 3rem;
-  }
+}
   
 .skills_layout_anim{
     opacity: 0;
@@ -44,4 +44,6 @@
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     }
   }
+  
+
   

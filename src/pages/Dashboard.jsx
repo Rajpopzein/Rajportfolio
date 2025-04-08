@@ -1,11 +1,8 @@
-import rocket from "../assets/rocket-spaceship.png";
-import {easeIn, easeOut, motion } from "framer-motion";
+import {easeOut, motion } from "framer-motion";
 import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import App from "../App";
 import {
-  faCloud,
   faEarthAsia,
-  faJetFighter,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Dashboard.css";
@@ -19,7 +16,7 @@ function Dashboard() {
       description: "Chat bot that guides my profile",
       Platform: "React js, Rasa, Python",
       link: "https://github.com/Rajpopzein/Zara-chatbot.git",
-    },
+    }
   ];
 
   return (

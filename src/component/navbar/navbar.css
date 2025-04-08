@@ -48,6 +48,7 @@
 .menu_list > li > a {
   text-decoration: none;
   color: #212121;
+  border: none !important;
 }
 
 .menu_list > li::before {
@@ -67,9 +68,9 @@
 }
 
 
-.menu_list > li:hover::before {
+/* .menu_list > li:hover::before {
   width: 100%;
-}
+} */
 
 .menu_list > li:hover {
   color: #7247cd;

@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const refForAnimation = useRef(null);
@@ -37,10 +38,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar_main">
+      {console.log("navbar", "======>")}
       <div className="brandname">
-        <a href="/">
+        <NavLink to="/">
           rajkumar<span className="band_sub">.</span>
-        </a>
+        </NavLink>
       </div>
       <div>
         <ul className="menu_list" ref={refForAnimation}>
@@ -48,17 +50,17 @@ const Navbar = () => {
             onClick={() => {
               route("/");
             }}
-            className={activeMenu === '/' ? "active" : ""}
+            className={activeMenu === "/" ? "active" : ""}
           >
-            <a href="/">Work</a>
+            <NavLink to="/">Work</NavLink>
           </li>
           <li
             onClick={() => {
               route("/about");
             }}
-            className={activeMenu === '/about' ? "active" : ""}
+            className={activeMenu === "/about" ? "active" : ""}
           >
-            <a href="/about">About</a>
+            <NavLink to="/about">About</NavLink>
           </li>
           {/* <li><a href='/contact'>Contact</a></li> */}
         </ul>
@@ -86,4 +88,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default memo(Navbar);
