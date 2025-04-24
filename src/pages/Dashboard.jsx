@@ -1,9 +1,7 @@
-import {easeOut, motion } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import App from "../App";
-import {
-  faEarthAsia,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Dashboard.css";
 import skillsData from "../utility/skillData";
@@ -16,7 +14,14 @@ function Dashboard() {
       description: "Chat bot that guides my profile",
       Platform: "React js, Rasa, Python",
       link: "https://github.com/Rajpopzein/Zara-chatbot.git",
-    }
+    },
+    {
+      name: "ThePhotor",
+      description: "Application to browse images",
+      Platform: "React js",
+      link: "https://github.com/Rajpopzein/ThePorter.git",
+      preview: "https://the-porter.vercel.app/",
+    },
   ];
 
   return (
@@ -107,9 +112,16 @@ function Dashboard() {
                     <FontAwesomeIcon icon={faEarthAsia} className="cloudicon" />
                     {pro.Platform}
                   </h6>
-                  <a className="View_btn" href={pro?.link}>
-                    View
-                  </a>
+                  <div className="flex btnNav">
+                    <a className="View_btn" href={pro?.link}>
+                      View
+                    </a>
+                    {pro?.preview && (
+                      <a className="preview_btn" href={pro?.preview}>
+                        Peview
+                      </a>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
