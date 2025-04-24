@@ -17,7 +17,7 @@ function Dashboard() {
     },
     {
       name: "ThePhotor",
-      description: "Application to browse images",
+      description: "Application to browse and download images",
       Platform: "React js",
       link: "https://github.com/Rajpopzein/ThePorter.git",
       preview: "https://the-porter.vercel.app/",
