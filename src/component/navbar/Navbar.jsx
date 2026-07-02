@@ -1,88 +1,62 @@
-import React, { useEffect, useRef, useState, memo } from "react";
+import React, { useEffect, useState, memo } from "react";
 import "./navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate, useLocation } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import site from "../../content/site.json";
 
 const Navbar = () => {
-  const refForAnimation = useRef(null);
-  const [activeIcon, setActiveIcon] = useState(true);
-  const [activeMenu, setActiveMenu] = useState("/");
+  const { brand, showClock } = site.meta;
+  const links = site.nav;
   const location = useLocation();
-  const route = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [clock, setClock] = useState("");
 
-  const handleIconClick = () => {
-    if (refForAnimation.current) {
-      if (!activeIcon) {
-        refForAnimation.current.classList.remove("activeMenuList");
-        refForAnimation.current.classList.add("deActiveAnmination");
-      } else {
-        refForAnimation.current.classList.remove("deActiveAnmination");
-        refForAnimation.current.classList.add("activeMenuList");
-      }
-    }
-    console.trace("icon handling", refForAnimation.current.classList);
-  };
-
+  // close the mobile menu whenever the route changes
   useEffect(() => {
-    if (location.pathname === "/") {
-      setActiveMenu("/");
-      refForAnimation.current.classList.remove("deActiveAnmination");
-    } else if (location.pathname === "/about") {
-      setActiveMenu("/about");
-    } else if (location.pathname === "/contact") {
-      setActiveMenu("/contact");
-    }
-  }, []);
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  // live UTC mission clock
+  useEffect(() => {
+    if (!showClock) return undefined;
+    const tick = () => setClock(new Date().toISOString().substr(11, 8) + " UTC");
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [showClock]);
 
   return (
     <div className="navbar_main">
-      {console.log("navbar", "======>")}
       <div className="brandname">
         <NavLink to="/">
-          rajkumar<span className="band_sub">.</span>
+          {brand}
+          <span className="band_sub">.</span>
         </NavLink>
       </div>
-      <div>
-        <ul className="menu_list" ref={refForAnimation}>
-          <li
-            onClick={() => {
-              route("/");
-            }}
-            className={activeMenu === "/" ? "active" : ""}
-          >
-            <NavLink to="/">Work</NavLink>
-          </li>
-          <li
-            onClick={() => {
-              route("/about");
-            }}
-            className={activeMenu === "/about" ? "active" : ""}
-          >
-            <NavLink to="/about">About</NavLink>
-          </li>
-          {/* <li><a href='/contact'>Contact</a></li> */}
+
+      <div className="nav_right">
+        <ul className={menuOpen ? "menu_list menu_open" : "menu_list"}>
+          {links.map((link) => (
+            <li key={link.path}>
+              <NavLink to={link.path} className={({ isActive }) => (isActive ? "on" : "")}>
+                {link.label}
+              </NavLink>
+            </li>
+          ))}
         </ul>
-        {activeIcon ? (
-          <FontAwesomeIcon
-            icon={faBars}
-            onClick={() => {
-              setActiveIcon(!activeIcon);
-              handleIconClick();
-            }}
-            className="hidden_item burgerIcon"
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon={faXmark}
-            onClick={() => {
-              setActiveIcon(!activeIcon);
-              handleIconClick();
-            }}
-            className="hidden_item xIcon"
-          />
-        )}
+
+        {showClock && <div className="clock mono">{clock || "--:--:-- UTC"}</div>}
+
+        <button
+          type="button"
+          className="burger"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <FontAwesomeIcon icon={menuOpen ? faXmark : faBars} />
+        </button>
       </div>
     </div>
   );

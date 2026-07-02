@@ -1,54 +1,55 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import App from "../../App";
 import "../About_page/about.css";
+import site from "../../content/site.json";
+import iconMap from "../../utility/iconMap";
 
 function About() {
+  const { about } = site;
   return (
     <App>
-      <div className="main about_main">
+      <div className="about_main main">
         <div className="about_name_head">
-          <h2 className="about_head">
-            Hey there, Rajkumar here. Delighted to meet you.
-          </h2>
+          <div className="coord mono">
+            {about.coords.map((c) => (
+              <span key={c.label}>
+                {c.label} <b>{c.value}</b>
+              </span>
+            ))}
+          </div>
+          <h2 className="about_head">{about.heading}</h2>
+
           <div className="contact_email">
-            <p>Email</p>
-            <a href="mailto:rajkumarrbtech@hotmail.com">rajkumarrbtech@hotmail.com</a>
+            <p className="eyebrow">{about.emailLabel}</p>
+            <a href={`mailto:${about.email}`}>{about.email}</a>
           </div>
+
           <div className="social_media">
-            <p>Get in touch</p>
-            <a href="https://www.linkedin.com/in/rajkumar-ra"><i className="fa-brands fa-linkedin-in"></i></a>
-            <a href="https://github.com/Rajpopzein"><i className="fa-brands fa-github-alt"></i></a>
-            <a href="https://x.com/rajpopzein2?s=21"><i className="fa-brands fa-x-twitter"></i></a>
-            
+            <p className="eyebrow">{about.socialLabel}</p>
+            <div className="social_row">
+              {about.socials.map((s) => (
+                <a key={s.label} href={s.href} aria-label={s.label} target="_blank" rel="noreferrer">
+                  <FontAwesomeIcon icon={iconMap[s.icon]} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-        <div className="breif_para">
-          <p className="para_content">
-            As a Full Stack Developer, I thrive on tackling intricate
-            challenges, crafting impactful, and user-centric solutions across
-            diverse platforms, all rooted in thorough research and data
-            analysis.
-          </p>
-          <p className="para_content">
-            Unlike the traditional image of a designer confined to an
-            Illustrator artboard, I approach design holistically. You'll often
-            find me deeply engaged in stylesheets, meticulously refining font
-            sizes, and strategizing layouts to ensure seamless user experiences.
-            My dedication lies in delivering not just visually appealing
-            interfaces but also technically robust solutions.
-          </p>
-          <p className="para_content">
-            Understanding that in the realm of business, the initial impression
-            is paramount, I recognize the pivotal role of website design in
-            seizing these opportunities. A stellar website transcends mere
-            aesthetics; it embodies functionality and user-friendliness.
-            Leveraging my programming background, I adeptly navigate technical
-            complexities, while simultaneously crafting polished and intuitive
-            websites. Moreover, my comprehensive grasp of recognized technical
-            standards and contemporary development methodologies ensures that my
-            solutions are not only elegant but also scalable and efficient.
-          </p>
-        </div>
+
+        <motion.div
+          className="brief_para panel"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          {about.paragraphs.map((para, i) => (
+            <p className="para_content" key={i}>
+              {para}
+            </p>
+          ))}
+        </motion.div>
       </div>
     </App>
   );

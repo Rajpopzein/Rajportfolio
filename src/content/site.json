@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "brand": "rajkumar",
+    "role": "Fullstack · Creator",
+    "showClock": true
+  },
+  "nav": [
+    { "label": "Work", "path": "/" },
+    { "label": "About", "path": "/about" }
+  ],
+  "hero": {
+    "coords": [
+      { "label": "SYS", "value": "ONLINE" },
+      { "label": "ROLE", "value": "FULLSTACK · CREATOR" },
+      { "label": "ORBIT", "value": "28.6°N" }
+    ],
+    "greeting": "Hi there.",
+    "headline": "I'm Rajkumar — a Fullstack Developer & Content Creator.",
+    "subtitle": "I build interactive things with code, and send them into orbit. Let's broaden our connections.",
+    "cta": { "label": "INITIATE LAUNCH", "path": "/about" },
+    "ghostLink": { "label": "// available for new missions", "path": "/contact" }
+  },
+  "skills": {
+    "index": "SYS.01",
+    "title": "Onboard systems",
+    "items": [
+      { "name": "React JS", "icon": "react", "status": "operational" },
+      { "name": "NodeJS", "icon": "node", "status": "operational" },
+      { "name": "Python", "icon": "python", "status": "operational" },
+      { "name": "AWS", "icon": "aws", "status": "operational" },
+      { "name": "Docker", "icon": "docker", "status": "operational" },
+      { "name": "Github", "icon": "github", "status": "operational" }
+    ]
+  },
+  "projects": {
+    "index": "LOG.02",
+    "title": "Mission log",
+    "items": [
+      {
+        "code": "ENTRY · ZARA",
+        "name": "Zara",
+        "description": "Chat bot that guides my profile — a conversational co-pilot trained to answer for me.",
+        "stack": "React js · Rasa · Python",
+        "link": "https://github.com/Rajpopzein/Zara-chatbot.git",
+        "preview": null
+      },
+      {
+        "code": "ENTRY · THEPHOTOR",
+        "name": "ThePhotor",
+        "description": "Application to browse and download images — fast, minimal, built to launch.",
+        "stack": "React js",
+        "link": "https://github.com/Rajpopzein/ThePorter.git",
+        "preview": "https://the-porter.vercel.app/"
+      }
+    ]
+  },
+  "footer": {
+    "eyebrow": "// incoming transmission",
+    "heading": "Thanks for visiting!",
+    "text": "Got questions, comments, or feedback? Feel free to reach out and contact me.",
+    "sign": "— END OF TRANSMISSION · rajkumar."
+  },
+  "about": {
+    "coords": [
+      { "label": "LOG", "value": "PERSONNEL" },
+      { "label": "CALLSIGN", "value": "RAJKUMAR" }
+    ],
+    "heading": "Hey there, Rajkumar here. Delighted to meet you.",
+    "emailLabel": "Email",
+    "email": "rajkumarrbtech@hotmail.com",
+    "socialLabel": "Get in touch",
+    "socials": [
+      { "label": "LinkedIn", "icon": "linkedin", "href": "https://www.linkedin.com/in/rajkumar-ra" },
+      { "label": "GitHub", "icon": "githubAlt", "href": "https://github.com/Rajpopzein" },
+      { "label": "Twitter", "icon": "twitter", "href": "https://x.com/rajpopzein2?s=21" }
+    ],
+    "paragraphs": [
+      "As a Full Stack Developer, I thrive on tackling intricate challenges, crafting impactful, and user-centric solutions across diverse platforms, all rooted in thorough research and data analysis.",
+      "Unlike the traditional image of a designer confined to an Illustrator artboard, I approach design holistically. You'll often find me deeply engaged in stylesheets, meticulously refining font sizes, and strategizing layouts to ensure seamless user experiences. My dedication lies in delivering not just visually appealing interfaces but also technically robust solutions.",
+      "Understanding that in the realm of business, the initial impression is paramount, I recognize the pivotal role of website design in seizing these opportunities. A stellar website transcends mere aesthetics; it embodies functionality and user-friendliness. Leveraging my programming background, I adeptly navigate technical complexities, while simultaneously crafting polished and intuitive websites."
+    ]
+  },
+  "contact": {
+    "eyebrow": "// open a channel",
+    "heading": "Let's connect constellations",
+    "subtitle": "Let's align our constellations! Reach out and let the magic of collaboration illuminate our skies.",
+    "fields": {
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "message": "Message"
+    },
+    "button": "Send it to mars"
+  }
+}
