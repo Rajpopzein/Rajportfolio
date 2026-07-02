@@ -6,7 +6,11 @@ import { NavLink, useLocation } from "react-router-dom";
 import site from "../../content/site.json";
 
 const Navbar = () => {
-  const { brand, showClock } = site.meta;
+  // Read nested JSON fields via dot-chain, NOT destructuring: webpack's JSON
+  // export mangling renames nested keys in the bundled data but does not rewrite
+  // a nested destructuring pattern, which would make these come back undefined.
+  const brand = site.meta.brand;
+  const showClock = site.meta.showClock;
   const links = site.nav;
   const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
