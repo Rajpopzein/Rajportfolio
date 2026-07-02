@@ -1,30 +1,11 @@
-import { faReact, faNode, faPython, faAws, faDocker, faGithub } from "@fortawesome/free-brands-svg-icons";
+import site from "../content/site.json";
+import iconMap from "./iconMap";
 
-const skillsData = [
-    {
-        name: "React JS",
-        icon: faReact    
-    },
-    {
-        name:"NodeJS",
-        icon: faNode
-    },
-    {
-        name:"Python",
-        icon: faPython 
-    },
-    {
-        name:"AWS",
-        icon: faAws 
-    },
-    {
-        name:"Docker",
-        icon: faDocker
-    },
-    {
-        name:"Github",
-        icon: faGithub
-    }
-]
+// Skill names/statuses are edited in src/content/site.json; here we attach the
+// Font Awesome icon component resolved from each item's `icon` key.
+const skillsData = site.skills.items.map((skill) => ({
+  ...skill,
+  icon: iconMap[skill.icon],
+}));
 
 export default skillsData;

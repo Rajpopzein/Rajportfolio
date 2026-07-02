@@ -1,0 +1,11 @@
+.starfield {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(1100px 720px at 82% -8%, rgba(139, 58, 158, 0.35), transparent 60%),
+    radial-gradient(1000px 800px at -8% 30%, rgba(45, 59, 143, 0.4), transparent 55%),
+    radial-gradient(900px 900px at 60% 110%, rgba(255, 125, 59, 0.1), transparent 55%),
+    linear-gradient(165deg, var(--deep), var(--void) 55%, #05040f);
+}

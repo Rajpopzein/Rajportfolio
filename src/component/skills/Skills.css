@@ -1,4 +1,85 @@
-.skill_card{
+.sys {
+  background: var(--panel);
+  border: 1px solid var(--panel-line);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  padding: 1.2rem 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.sys::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   opacity: 0;
+  background: radial-gradient(340px 120px at var(--mx, 50%) 50%, rgba(255, 171, 82, 0.12), transparent 70%);
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.sys:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 171, 82, 0.4);
+}
+.sys:hover::before {
+  opacity: 1;
 }
 
+.sys_dot {
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 12px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.3rem;
+  color: var(--void);
+  background: linear-gradient(140deg, var(--amber), var(--amber-hot));
+}
+
+.sys_meta .sys_name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.sys_meta .sys_status {
+  font-size: 0.68rem;
+  color: var(--star-dim);
+  margin-top: 0.15rem;
+}
+.sys_meta .sys_status b {
+  color: var(--cyan);
+  font-weight: 500;
+}
+
+.signal {
+  margin-left: auto;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+}
+.signal i {
+  width: 4px;
+  border-radius: 2px;
+  background: rgba(97, 232, 225, 0.35);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.signal i:nth-child(1) {
+  height: 40%;
+}
+.signal i:nth-child(2) {
+  height: 65%;
+}
+.signal i:nth-child(3) {
+  height: 85%;
+}
+.signal i:nth-child(4) {
+  height: 100%;
+}
+.sys:hover .signal i {
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(97, 232, 225, 0.6);
+}

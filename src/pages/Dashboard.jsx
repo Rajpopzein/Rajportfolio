@@ -1,133 +1,121 @@
-import { easeOut, motion } from "framer-motion";
-import handshake from "../assets/rocket_launch_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import App from "../App";
-import { faEarthAsia } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
+import App from "../App";
 import "./Dashboard.css";
 import skillsData from "../utility/skillData";
 import Skills from "../component/skills/Skills";
+import site from "../content/site.json";
 
 function Dashboard() {
-  const projects = [
-    {
-      name: "Zara",
-      description: "Chat bot that guides my profile",
-      Platform: "React js, Rasa, Python",
-      link: "https://github.com/Rajpopzein/Zara-chatbot.git",
-    },
-    {
-      name: "ThePhotor",
-      description: "Application to browse and download images",
-      Platform: "React js",
-      link: "https://github.com/Rajpopzein/ThePorter.git",
-      preview: "https://the-porter.vercel.app/",
-    },
-  ];
+  const { hero, skills, projects } = site;
+  const navigate = useNavigate();
+  const [launching, setLaunching] = useState(false);
+
+  const handleLaunch = () => {
+    if (launching) return;
+    setLaunching(true);
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.setTimeout(() => {
+      setLaunching(false);
+      navigate(hero.cta.path);
+    }, reduce ? 150 : 1300);
+  };
 
   return (
     <App>
-      <main>
-        <div className="Lander_page main">
-          <div>
-            <motion.div
-              initial={{ x: "-10%", opacity: 0 }}
-              animate={{
-                x: "0%",
-                opacity: 1,
-                transition: {
-                  ease: easeOut,
-                  delay: 0.1,
-                },
-              }}
+      <div className="lander main">
+        <motion.div
+          className="hero_copy"
+          initial={{ y: 16, opacity: 0 }}
+          animate={{ y: 0, opacity: 1, transition: { ease: "easeOut", duration: 0.6 } }}
+        >
+          <div className="coord mono">
+            {hero.coords.map((c) => (
+              <span key={c.label}>
+                {c.label} <b>{c.value}</b>
+              </span>
+            ))}
+          </div>
+          <h1 className="intro_tag">
+            <span className="intro_grad">{hero.greeting}</span> {hero.headline}
+          </h1>
+          <p className="subtab">{hero.subtitle}</p>
+          <div className="cta_row">
+            <button type="button" className="launch mono" onClick={handleLaunch}>
+              {launching ? "LIFTOFF" : hero.cta.label} <span className="ar">↗</span>
+            </button>
+            <button
+              type="button"
+              className="ghost_link mono"
+              onClick={() => navigate(hero.ghostLink.path)}
             >
-              <h1 className="intro_tag">
-                <span className="intor_hisapn">Hi there. </span>I’m Rajkumar, a
-                Fullstack Developer and Content Creater.
-              </h1>
-              <h5 className="subtab">
-                A Developer who likes to build interactive things with code.
-              </h5>
-              <motion.a className="btn_available" href="/about">
-                {/* <span className="material-symbols-outlined handshake_img">rocket_launch</span> */}
-                <img
-                  src={handshake}
-                  className="handshake_img"
-                  alt="handshake"
-                />
-                <span>Available For New Project</span>
-              </motion.a>
-              <p className="minar_insp">let's broaden our connections</p>
-            </motion.div>
+              {hero.ghostLink.label}
+            </button>
           </div>
-          <div className="rockdiv">
+        </motion.div>
+
+        <div className="rocket_stage">
+          <div className="orbit" />
+          <div className="orbit two" />
+          <div className="glow" />
+          <motion.img
+            className={launching ? "rocket_image launching" : "rocket_image"}
+            src="/images/rocket-spaceship.png"
+            alt="Rocket spaceship"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1, transition: { delay: 0.15, duration: 0.6 } }}
+          />
+        </div>
+      </div>
+
+      <section className="block main">
+        <div className="block_head">
+          <span className="idx">{skills.index}</span>
+          <h2>{skills.title}</h2>
+        </div>
+        <div className="systems">
+          {skillsData.map((skill, index) => (
+            <Skills key={skill.name} index={index} Skill={skill} />
+          ))}
+        </div>
+      </section>
+
+      <section className="block main">
+        <div className="block_head">
+          <span className="idx">{projects.index}</span>
+          <h2>{projects.title}</h2>
+        </div>
+        <div className="mission_log">
+          {projects.items.map((pro) => (
             <motion.div
-              initial={{ x: "15%", opacity: 0 }}
-              animate={{
-                x: "10%",
-                opacity: 1,
-                transition: {
-                  ease: easeOut,
-                  delay: 0.1,
-                },
-              }}
+              className="entry"
+              key={pro.name}
+              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ y: 24, opacity: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
             >
-              <img
-                className="rocket_image"
-                src="/images/rocket-spaceship.png"
-                alt="Rocket spaceship"
-              />
+              <span className="entry_code mono">{pro.code}</span>
+              <h3>{pro.name}</h3>
+              <p>{pro.description}</p>
+              <span className="stack mono">{pro.stack}</span>
+              <div className="entry_acts">
+                <a className="btn2 solid mono" href={pro.link}>
+                  View <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+                {pro.preview && (
+                  <a className="btn2 wire mono" href={pro.preview}>
+                    Preview
+                  </a>
+                )}
+              </div>
             </motion.div>
-          </div>
+          ))}
         </div>
-
-        <div className="skills_layout main">
-          <motion.div
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 2, ease: "easeIn" }}
-            animate={{ scale: 1 }}
-            layout
-            className="skills_layout_anim"
-          >
-            <h2 className="primary_color">Skills</h2>
-            <h2 className="skills_head">What I'm good at</h2>
-            <div className="skills_list">
-              {skillsData.map((skill, index) => (
-                <Skills index={index} Skill={skill} />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        <div className="project main">
-          <div>
-            <h2 className="primary_color">Highlighted Projects</h2>
-            <h2 className="project_head">What I've been working on</h2>
-            {/* <img className="airdrop" src={airdrop}/> */}
-            <div className="project_list">
-              {projects.map((pro, index) => (
-                <div className="project_card" key={index}>
-                  <h6 className="strong">{pro.name}</h6>
-                  <p className="card_content">{pro.description}</p>
-                  <h6 className="card_platform">
-                    <FontAwesomeIcon icon={faEarthAsia} className="cloudicon" />
-                    {pro.Platform}
-                  </h6>
-                  <div className="flex btnNav">
-                    <a className="View_btn" href={pro?.link}>
-                      View
-                    </a>
-                    {pro?.preview && (
-                      <a className="preview_btn" href={pro?.preview}>
-                        Peview
-                      </a>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </main>
+      </section>
     </App>
   );
 }
