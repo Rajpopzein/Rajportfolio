@@ -3,19 +3,20 @@
     /* text-align: center; */
 }
 .contact_heading > h1{
-    background-image: linear-gradient(90deg,#322e2e 25%, #6a11cb 50%);
+    background-image: linear-gradient(90deg,#3f3865 25%, #6c47bd 50%);
     background-clip: text;
     color: transparent;
     font-size: 3rem;
 }
 .contact_heading > p{
-    color: #595858;
+    color: var(--clay-text-soft);
 }
 .contact-card{
-    border: 1px solid transparent;
-    box-shadow: 1px 0px 9   px 0.01px #a17ec488;
+    border: none;
+    background-color: var(--clay-surface);
+    box-shadow: var(--clay-shadow);
     margin-top: 1.7rem;
-    border-radius: 0.5rem;
+    border-radius: 2rem;
     padding: 1rem;
     display: flex;
     justify-content: space-around;
@@ -37,10 +38,14 @@
 .conatact-name > input{
     margin-right: 1rem;
     width: 100%;
-    padding:0.6rem;
+    padding:0.7rem 0.9rem;
     border: none;
-    border-radius: 0.2rem;
-    box-shadow: 0px 1px 4px 0.7px #807f8260;
+    border-radius: 1rem;
+    background-color: var(--clay-bg);
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.18),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+    color: var(--clay-text);
 }
 .contact-form{
     margin-top: 1rem;
@@ -52,30 +57,47 @@
 .Contact-conten-pages > input{
     width: 88%;
     margin: 0.7rem 0px;
-    padding:0.6rem;
+    padding:0.7rem 0.9rem;
     border: none;
-    border-radius: 0.2rem;
-    box-shadow: 0px 1px 4px 0.7px #807f8260;
+    border-radius: 1rem;
+    background-color: var(--clay-bg);
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.18),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+    color: var(--clay-text);
 }
 .Contact-conten-pages > textarea{
     width: 88%;
     resize: none;
-    padding:0.6rem;
+    padding:0.7rem 0.9rem;
     height: 6rem;
     border: none;
-    border-radius: 0.2rem;
-    box-shadow: 0px 1px 4px 0.7px #807f8260;
+    border-radius: 1rem;
+    background-color: var(--clay-bg);
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.18),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+    color: var(--clay-text);
 }
 .mars-btn{
     width: 91.1%;
-    padding: 0.4rem;
+    padding: 0.6rem;
     color: #f8f8f8;
-    background-color: #6c47bd;
+    background-color: var(--clay-primary);
     border: none;
-    border-radius: 0.2rem;
-    margin-top: 0.3rem;
+    border-radius: 999px;
+    margin-top: 0.7rem;
     margin-bottom: 1rem;
     cursor: pointer;
+    box-shadow: var(--clay-shadow-solid);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mars-btn:hover{
+    transform: translateY(-2px);
+}
+.mars-btn:active{
+    transform: translateY(1px);
+    box-shadow: var(--clay-shadow-pressed);
 }
 .mars-btn > p{
     font-size: 1rem !important;
@@ -86,7 +108,10 @@
 
 .conatact-name > input:focus{
     border: none !important;
-    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.3),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9),
+        0 0 0 2px rgba(108, 71, 189, 0.35) !important;
     outline: none;
 }
 .conatact-name > input:active{
@@ -95,17 +120,24 @@
 }
 .Contact-conten-pages > textarea:focus{
     border: none !important;
-    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.3),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9),
+        0 0 0 2px rgba(108, 71, 189, 0.35) !important;
     outline: none;
 }
 .Contact-conten-pages > input:focus{
     border: none !important;
-    box-shadow: 0px 1px 4px 0.7px #530ce190 !important;
+    box-shadow:
+        inset 3px 3px 7px rgba(108, 71, 189, 0.3),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.9),
+        0 0 0 2px rgba(108, 71, 189, 0.35) !important;
     outline: none;
 }
 .marse-img{
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     transform: scaleX(-1);
+    box-shadow: var(--clay-shadow);
 }
 .conatact-name{
     display: flex;
@@ -146,4 +178,3 @@
         margin-right: 0px !important;
     }
   }
-  

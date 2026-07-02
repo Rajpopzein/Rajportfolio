@@ -2,12 +2,17 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   overflow: hidden;
+  background-color: var(--clay-surface);
+  border-radius: 999px;
+  padding: 0.7rem 1.8rem;
+  box-shadow: var(--clay-shadow);
 }
 .brandname {
   font-size: 145%;
   font-weight: 700;
-  color: #212121;
+  color: var(--clay-text);
   cursor: pointer;
   position: relative;
 }
@@ -23,17 +28,13 @@
 }
 .brandname > a {
   text-decoration: none;
-  color: #212121;
+  color: var(--clay-text);
 }
 .brandname:hover::before {
   width: 100%; /* Expand width to 100% on hover */
 }
 
 .menu_list {
-  /* width: 14rem;
-    display: flex;
-    justify-content: space-between;
-    list-style: none; */
   width: 14rem;
   display: flex;
   justify-content: space-evenly;
@@ -41,40 +42,31 @@
 }
 .menu_list > li {
   font-weight: 600;
-  color: #212121;
-  padding: 0.2rem;
+  color: var(--clay-text);
+  padding: 0.3rem 1rem;
   position: relative;
+  border-radius: 999px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
 }
 .menu_list > li > a {
   text-decoration: none;
-  color: #212121;
+  color: var(--clay-text);
   border: none !important;
 }
 
-.menu_list > li::before {
-  position: absolute;
-  content: "";
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  background-color: #7247cd;
-  transition: width 0.5s ease-out;
+.menu_list > li.active {
+  background-color: var(--clay-primary-soft);
+  box-shadow:
+    inset 0 4px 8px rgba(108, 71, 189, 0.3),
+    inset 0 -3px 6px rgba(255, 255, 255, 0.7);
 }
-
-.active{
-  border-bottom: 2px solid #7247cd;
-  transition: none;
-}
-
-
-/* .menu_list > li:hover::before {
-  width: 100%;
-} */
 
 .menu_list > li:hover {
-  color: #7247cd;
+  background-color: var(--clay-primary-soft);
   cursor: pointer;
+}
+.menu_list > li:hover > a {
+  color: #7247cd;
 }
 .band_sub {
   color: #7247cd;
@@ -134,9 +126,10 @@
   top: 12%;
   left: 0;
   width: 100% !important;
-  background-color: #000;
+  background-color: var(--clay-surface);
+  border-radius: 1.75rem;
+  box-shadow: var(--clay-shadow);
   z-index: 1;
-  color: #fff !important;
   opacity: 0;
   animation: opacLoad 0.5s 0.2s ease-out forwards !important;
 }
@@ -171,13 +164,9 @@
 }
 
 .activeMenuList > li > a {
-  color: #fff !important;
+  color: var(--clay-text) !important;
 }
 
 .activeMenuList > li:nth-child(odd) {
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid var(--clay-primary-soft);
 }
-
-/* .activeMenuList > li:hover{
-    background-color: #7247cd;
-} */
