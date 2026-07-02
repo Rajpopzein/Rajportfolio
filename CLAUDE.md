@@ -29,6 +29,10 @@ The repo contains leftovers from an abandoned Vite migration. Do not be misled b
 
 When changing the entry point, HTML shell, fonts, or meta tags, edit `public/index.html` and `src/index.js`.
 
+## Deployment (Vercel)
+
+`vercel.json` pins the build explicitly so the dead root Vite files can't cause a framework misdetection: `framework: create-react-app`, `outputDirectory: build`. It also adds the SPA rewrite `/(.*) → /index.html` — this is **required** because the app uses `BrowserRouter` (real paths `/about`, `/contact`), so without it a direct hit or refresh on a sub-route 404s. Vercel serves real static files before applying the rewrite, so hashed assets under `/static` are unaffected. Do not set a `homepage` field in `package.json` — assets are referenced root-absolute (`/static/...`) and a subpath prefix would break them on Vercel.
+
 ## Architecture
 
 ### Routing and the inverted layout pattern
