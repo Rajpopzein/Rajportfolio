@@ -7,6 +7,7 @@ import App from "../App";
 import "./Dashboard.css";
 import skillsData from "../utility/skillData";
 import Skills from "../component/skills/Skills";
+import Rocket from "../component/rocket/Rocket";
 import site from "../content/site.json";
 
 function Dashboard() {
@@ -61,13 +62,13 @@ function Dashboard() {
           <div className="orbit" />
           <div className="orbit two" />
           <div className="glow" />
-          <motion.img
-            className={launching ? "rocket_image launching" : "rocket_image"}
-            src="/images/rocket-spaceship.png"
-            alt="Rocket spaceship"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1, transition: { delay: 0.15, duration: 0.6 } }}
-          />
+          <motion.div
+            className="rocket_mount"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { delay: 0.15, duration: 0.6 } }}
+          >
+            <Rocket className={launching ? "rocket_image launching" : "rocket_image"} />
+          </motion.div>
         </div>
       </div>
 

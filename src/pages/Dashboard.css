@@ -137,11 +137,16 @@
   background: radial-gradient(circle, rgba(255, 171, 82, 0.32), transparent 68%);
   filter: blur(4px);
 }
-.rocket_image {
-  width: min(300px, 72%);
-  height: auto;
+.rocket_mount {
   position: relative;
   z-index: 2;
+  display: grid;
+  place-items: center;
+}
+.rocket_image {
+  width: auto;
+  height: clamp(240px, 34vw, 400px);
+  display: block;
   filter: drop-shadow(0 26px 34px rgba(255, 125, 59, 0.35));
   animation: rocket-bob 5s ease-in-out infinite;
 }
