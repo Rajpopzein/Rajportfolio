@@ -57,10 +57,10 @@ A new page must (1) get a `<Route>` in `src/Router.jsx` with a lazy import, and 
 
 - `src/content/site.json` — **all site copy** (see "Content lives in JSON" below)
 - `src/pages/` — route-level pages (`Dashboard.jsx`, `About_page/`, `Contact_page/`)
-- `src/component/` — shared components: `navbar/`, `skills/`, `starfield/`, `chatbot_screen/`, `projectlietcard/` (directory name typo is existing convention — do not "fix" imports casually)
+- `src/component/` — shared components: `navbar/`, `skills/`, `starfield/`, `rocket/`, `chatbot_screen/`, `projectlietcard/` (directory name typo is existing convention — do not "fix" imports casually)
 - `src/utility/iconMap.js` — maps the string icon keys in `site.json` (e.g. `"react"`, `"linkedin"`) to Font Awesome icon objects, which cannot live in JSON
 - `src/utility/skillData.js` — resolves `site.json`'s skills into `{ name, status, icon }` by attaching the Font Awesome icon via `iconMap`
-- `src/assets/` — images imported by components; `public/images/` — images referenced by absolute URL (e.g. the Dashboard rocket uses `/images/rocket-spaceship.png`)
+- `src/assets/` — images imported by components; `public/images/` — images referenced by absolute URL (e.g. the JS/Python skill logos). The Dashboard rocket is **not** an image — it is a hand-built SVG component (`src/component/rocket/Rocket.jsx`)
 
 ### Content lives in JSON
 
@@ -71,7 +71,8 @@ The one indirection: Font Awesome icon objects can't be serialized to JSON, so `
 ### Interactive elements
 
 - **`src/component/starfield/Starfield.jsx`** — a fixed full-viewport `<canvas>` (mounted once in `App.js`) that drifts stars, links nearby ones, and wires a live constellation to the cursor. Sets up/tears down its own `requestAnimationFrame` loop and listeners in a `useEffect`; freezes when `prefers-reduced-motion` is set.
-- **Dashboard hero "INITIATE LAUNCH"** — toggles a `launching` class that plays the rocket liftoff CSS animation, then navigates to `hero.cta.path` (from `site.json`).
+- **`src/component/rocket/Rocket.jsx`** — the hero rocket, a hand-built inline SVG (gradients, porthole, fins) with a continuously flickering exhaust flame and drifting sparks (`rocket.css`). The `launching` class intensifies the flame; flame/sparks freeze under `prefers-reduced-motion`.
+- **Dashboard hero "INITIATE LAUNCH"** — toggles the `launching` class that plays the rocket liftoff CSS animation, then navigates to `hero.cta.path` (from `site.json`). The rocket's opacity entrance is a `motion.div` wrapper so it doesn't fight the transform-based bob/liftoff CSS animations.
 - The Navbar shows a live UTC mission clock and collapses to a burger dropdown at ≤768px.
 
 ### Chatbot (currently disabled)

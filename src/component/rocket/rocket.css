@@ -1,0 +1,80 @@
+/* flame + sparks. Origin is the nozzle so the flame grows downward. */
+.rocket_flame {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: flame-flicker 0.26s ease-in-out infinite alternate;
+}
+.rocket_flame_core {
+  transform-box: fill-box;
+  transform-origin: top center;
+  animation: flame-core 0.18s ease-in-out infinite alternate;
+}
+
+@keyframes flame-flicker {
+  0% {
+    transform: scaleY(0.9) scaleX(1.04);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scaleY(1.14) scaleX(0.95);
+    opacity: 1;
+  }
+}
+@keyframes flame-core {
+  0% {
+    transform: scaleY(0.82) scaleX(1.05);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scaleY(1.08) scaleX(0.94);
+    opacity: 1;
+  }
+}
+
+.rocket_spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-fall 0.7s linear infinite;
+}
+.rocket_spark.s1 {
+  animation-delay: 0s;
+}
+.rocket_spark.s2 {
+  animation-delay: 0.18s;
+}
+.rocket_spark.s3 {
+  animation-delay: 0.34s;
+}
+.rocket_spark.s4 {
+  animation-delay: 0.5s;
+}
+@keyframes spark-fall {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(38px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+/* during liftoff the exhaust roars: longer, brighter flame + faster sparks */
+.rocket_svg.launching .rocket_flame {
+  animation-duration: 0.1s;
+  transform: scaleY(1.5);
+}
+.rocket_svg.launching .rocket_spark {
+  animation-duration: 0.35s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rocket_flame,
+  .rocket_flame_core,
+  .rocket_spark {
+    animation: none;
+  }
+  .rocket_spark {
+    opacity: 0.6;
+  }
+}
